@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodosModule } from './todos/todos/todos.module';
+import { TodosModule } from './todos/todos.module';
+import { MatToolbarModule } from '@angular/material/toolbar'
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, TodosModule],
+  imports: [BrowserModule, AppRoutingModule, TodosModule, MatToolbarModule],
   providers: [],
   bootstrap: [AppComponent],
 })

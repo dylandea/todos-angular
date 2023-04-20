@@ -1,1 +1,21 @@
-<p>todos works!</p>
+<section id="todos">
+    <p><strong> Vous avez x tache(s) restante(s)</strong></p>
+    <mat-form-field>
+        <mat-label>
+            Ajouter une tâche
+        </mat-label>
+        <input type="text" matInput>
+    </mat-form-field>
+
+    <app-todo></app-todo>
+    
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Terminée(s) x
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+        </mat-expansion-panel>
+    </mat-accordion>
+</section>
