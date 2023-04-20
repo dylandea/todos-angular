@@ -9,8 +9,8 @@ import * as fromContainers from './containers';
   imports: [CommonModule, TodosRoutingModule, TodosMaterialModule],
 
   declarations: [
-    ... fromComponents.components,
-    ... fromContainers.containers
+    ...fromComponents.components,
+    ...fromContainers.containers
   ]
 })
 export class TodosModule {}
