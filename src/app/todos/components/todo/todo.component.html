@@ -1,9 +1,9 @@
 <section class="todo">
-    <mat-checkbox>
+    <mat-checkbox class="margin" color="primary" [(ngModel)]="todo.isCompleted">
 
     </mat-checkbox>
     <span>
-        Titre
+        {{todo.title}}
     </span>
     <button mat-button color="warn">
         <mat-icon>delete</mat-icon>

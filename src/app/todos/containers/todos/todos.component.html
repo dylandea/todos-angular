@@ -1,5 +1,5 @@
 <section id="todos">
-    <p><strong> Vous avez x tache(s) restante(s)</strong></p>
+    <p><strong> Vous avez {{countTodos}} tache(s) restante(s)</strong></p>
     <mat-form-field>
         <mat-label>
             Ajouter une tâche
@@ -7,15 +7,22 @@
         <input type="text" matInput>
     </mat-form-field>
 
-    <app-todo></app-todo>
+    <app-todo *ngFor="let todo of todos"
+    [todo]="todo">
+        
+    </app-todo>
     
-    <mat-accordion>
+    <mat-accordion [hidden]="isHidden">
         <mat-expansion-panel>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    Terminée(s) x
+                    Terminée(s) {{countCompleted}}
                 </mat-panel-title>
             </mat-expansion-panel-header>
+            <app-todo *ngFor="let todo of todosCompleted"
+    [todo]="todo">
+        
+    </app-todo>
         </mat-expansion-panel>
     </mat-accordion>
 </section>
