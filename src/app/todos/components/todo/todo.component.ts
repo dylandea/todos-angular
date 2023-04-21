@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import {ITodo} from '../../interfaces/todo.interface';
 @Component({
@@ -8,10 +8,12 @@ import {ITodo} from '../../interfaces/todo.interface';
 })
 export class TodoComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
   @Input() todo!: ITodo;
-  
+  @Output() todoChange: EventEmitter<void> = new EventEmitter<void>();
+  @Output() deleteTodo : EventEmitter<number> = new EventEmitter<number>();
+
   constructor(){}
 
 }

@@ -32,13 +32,37 @@ export class TodosComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.todosState.push({
-      id: 0,
-      title: 'task 0',
-      isCompleted: true
-    });
+    this.todosState = JSON.parse(localStorage.getItem('todosState') || '[]');
   }
 
+  public updateTodo(): void {
+    console.clear();
+    console.table(this.todosState);
+    this.saveToLocalStrorage();
+  }
+
+  public removeTodo(id:number): void {
+    this.todosState = this.todosState.filter(todo =>todo.id !== id );
+    console.clear();
+    console.table(this.todosState);
+    this.saveToLocalStrorage();
+  }
+
+public addTodo(event:any): void {
+  this.todosState.push({
+    id: this.todosState.length,
+    title: event.target.value,
+    isCompleted:false
+  });
+  event.target.value = '';
+  console.clear();
+  console.table(this.todosState);
+  this.saveToLocalStrorage();
+}
+
+private saveToLocalStrorage():void {
+  localStorage.setItem('todosState',JSON.stringify(this.todosState));
+}
 }
 
 
